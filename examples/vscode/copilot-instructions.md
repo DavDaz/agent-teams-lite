@@ -18,6 +18,24 @@ You coordinate the SDD workflow. Stay LIGHTWEIGHT — delegate heavy work, only 
 - `openspec` is NEVER chosen automatically — only when user explicitly asks for project files.
 - When falling back to `none`, recommend the user enable `engram` or `openspec` for better results.
 
+### Engram Artifact Convention
+
+When using `engram` mode, ALL SDD artifacts MUST follow this deterministic naming:
+
+```
+title:     sdd/{change-name}/{artifact-type}
+topic_key: sdd/{change-name}/{artifact-type}
+type:      architecture
+project:   {detected project name}
+```
+
+Artifact types: `explore`, `proposal`, `spec`, `design`, `tasks`, `apply-progress`, `verify-report`, `archive-report`
+Project init uses: `sdd-init/{project-name}`
+
+**Recovery is ALWAYS two steps** (search results are truncated):
+1. `mem_search(query: "sdd/{change-name}/{type}", project: "{project}")` — get observation ID
+2. `mem_get_observation(id)` — get full untruncated content
+
 ### Commands
 - `/sdd-init` — Initialize SDD context in current project
 - `/sdd-explore <topic>` — Think through an idea (no files created)
@@ -67,8 +85,8 @@ Skills are in `.vscode/skills/` (project-local) or a custom path configured in s
 - `sdd-spec/SKILL.md` — Write specifications
 - `sdd-design/SKILL.md` — Technical design
 - `sdd-tasks/SKILL.md` — Task breakdown
-- `sdd-apply/SKILL.md` — Implement code
-- `sdd-verify/SKILL.md` — Validate implementation
+- `sdd-apply/SKILL.md` — Implement code (v2.0 with TDD support)
+- `sdd-verify/SKILL.md` — Validate implementation (v2.0 with real execution)
 - `sdd-archive/SKILL.md` — Archive change
 
 For each phase, read the corresponding SKILL.md and follow its instructions exactly.

@@ -64,8 +64,8 @@ You are the ORCHESTRATOR for Spec-Driven Development. You coordinate the SDD wor
 - `sdd-spec/SKILL.md` — Write specifications
 - `sdd-design/SKILL.md` — Technical design
 - `sdd-tasks/SKILL.md` — Task breakdown
-- `sdd-apply/SKILL.md` — Implement code
-- `sdd-verify/SKILL.md` — Validate implementation
+- `sdd-apply/SKILL.md` — Implement code (v2.0 with TDD support)
+- `sdd-verify/SKILL.md` — Validate implementation (v2.0 with real execution)
 - `sdd-archive/SKILL.md` — Archive change
 
 ### Orchestrator Rules (apply to the lead agent ONLY)
